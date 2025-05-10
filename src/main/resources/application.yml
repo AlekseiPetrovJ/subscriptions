@@ -1,0 +1,57 @@
+spring:
+  profiles:
+    active: "dev"
+---
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+  application:
+    name: subscriptions
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  datasource:
+    driver: org.postgresql.Driver
+    url: jdbc:postgresql://postgres:5432/subscriptions
+    #    url: jdbc:postgresql://localhost:5433/subscriptions
+    username: subscriptions
+    password: subscriptions
+  liquibase:
+    enabled: true
+    change-log: classpath:/changelog/changelog.xml
+server:
+  port: 8080
+springdoc:
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api-docs
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "test"
+  jpa:
+    hibernate:
+      database-platform: org.hibernate.dialect.H2Dialect
+#      ddl-auto: create
+      ddl-auto: validate
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: true
+  liquibase:
+    enabled: true
+    change-log: classpath:/changelog/changelog.xml

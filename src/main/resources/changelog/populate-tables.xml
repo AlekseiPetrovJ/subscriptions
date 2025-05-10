@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        logicalFilePath="changelog/changelog.xml">
+
+
+    <changeSet id="1746894995526-1" author="Aleksei">
+        <insert tableName="type_subscription">
+            <column name="name" value="Yandex music"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746894995526-2" author="Aleksei">
+        <insert tableName="type_subscription">
+            <column name="name" value="Google music"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746894995526-3" author="Aleksei">
+        <insert tableName="type_subscription">
+            <column name="name" value="Netflix"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746894995526-4" author="Aleksei">
+        <insert tableName="type_subscription">
+            <column name="name" value="VK music"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746894995526-5" author="Aleksei">
+        <insert tableName="type_subscription">
+            <column name="name" value="Youtube"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1746895175736-1" author="Aleksei">
+        <insert tableName="users">
+            <column name="username" value="Ivan"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746895175736-2" author="Aleksei">
+        <insert tableName="users">
+            <column name="username" value="Olga"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746895175736-3" author="Aleksei">
+        <insert tableName="users">
+            <column name="username" value="Oleg"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="1746895257847-1" author="Aleksei">
+        <insert tableName="subscription">
+            <column name="end_subscription" valueDate="2026-05-10T14:55:55.657Z"/>
+            <column name="user_id" valueNumeric="1"/>
+            <column name="type_subscription_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746895257847-2" author="Aleksei">
+        <insert tableName="subscription">
+            <column name="end_subscription" valueDate="2026-05-18T14:55:55.657Z"/>
+            <column name="user_id" valueNumeric="1"/>
+            <column name="type_subscription_id" valueNumeric="3"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746895257847-3" author="Aleksei">
+        <insert tableName="subscription">
+            <column name="end_subscription" valueDate="2026-08-10T14:55:55.657Z"/>
+            <column name="user_id" valueNumeric="1"/>
+            <column name="type_subscription_id" valueNumeric="4"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746895257847-4" author="Aleksei">
+        <insert tableName="subscription">
+            <column name="end_subscription" valueDate="2026-08-11T14:55:55.657Z"/>
+            <column name="user_id" valueNumeric="2"/>
+            <column name="type_subscription_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746895257847-5" author="Aleksei">
+        <insert tableName="subscription">
+            <column name="end_subscription" valueDate="2026-08-18T14:55:55.657Z"/>
+            <column name="user_id" valueNumeric="2"/>
+            <column name="type_subscription_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746895257847-6" author="Aleksei">
+        <insert tableName="subscription">
+            <column name="end_subscription" valueDate="2026-08-18T14:55:55.657Z"/>
+            <column name="user_id" valueNumeric="2"/>
+            <column name="type_subscription_id" valueNumeric="3"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746895257847-7" author="Aleksei">
+        <insert tableName="subscription">
+            <column name="end_subscription" valueDate="2026-08-11T14:55:55.657Z"/>
+            <column name="user_id" valueNumeric="3"/>
+            <column name="type_subscription_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746895257847-8" author="Aleksei">
+        <insert tableName="subscription">
+            <column name="end_subscription" valueDate="2026-08-18T14:55:55.657Z"/>
+            <column name="user_id" valueNumeric="3"/>
+            <column name="type_subscription_id" valueNumeric="3"/>
+        </insert>
+    </changeSet>
+    <changeSet id="1746895257847-9" author="Aleksei">
+        <insert tableName="subscription">
+            <column name="end_subscription" valueDate="2026-08-18T14:55:55.657Z"/>
+            <column name="user_id" valueNumeric="3"/>
+            <column name="type_subscription_id" valueNumeric="4"/>
+        </insert>
+    </changeSet>
+
+
+</databaseChangeLog>

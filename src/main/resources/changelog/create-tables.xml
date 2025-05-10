@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        logicalFilePath="changelog/changelog.xml">
+   
+    <changeSet id="1746894685081-1" author="Aleksei">
+        <createTable tableName="subscription">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_subscription"/>
+            </column>
+            <column name="end_subscription" type="DATETIME"/>
+            <column name="user_id" type="BIGINT"/>
+            <column name="type_subscription_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1746894685081-2" author="Aleksei">
+        <createTable tableName="type_subscription">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_type_subscription"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1746894685081-3" author="Aleksei">
+        <createTable tableName="users">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_users"/>
+            </column>
+            <column name="username" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1746894685081-4" author="Aleksei">
+        <addUniqueConstraint columnNames="name" constraintName="uc_type_subscription_name"
+                             tableName="type_subscription"/>
+    </changeSet>
+    <changeSet id="1746894685081-5" author="Aleksei">
+        <addForeignKeyConstraint baseColumnNames="type_subscription_id" baseTableName="subscription"
+                                 constraintName="FK_SUBSCRIPTION_ON_TYPE_SUBSCRIPTION" referencedColumnNames="id"
+                                 referencedTableName="type_subscription"/>
+    </changeSet>
+    <changeSet id="1746894685081-6" author="Aleksei">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="subscription"
+                                 constraintName="FK_SUBSCRIPTION_ON_USER" referencedColumnNames="id"
+                                 referencedTableName="users"/>
+    </changeSet>
+
+</databaseChangeLog>
